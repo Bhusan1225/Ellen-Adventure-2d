@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 
@@ -55,22 +54,22 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("Crouch", crouch);
 
         Vector2 sizeofCollider = boxCollider.size;
-        //Vector2 offsetofCollider = boxCollider.offset;
+        Vector2 offsetofCollider = boxCollider.offset;
 
         if (crouch == true)
         {
 
             sizeofCollider = new Vector2(1.2f, 1.4f);
-            //offsetofCollider = new Vector2(0f, 0.5f);
+            offsetofCollider = new Vector2(0f, 0.5f);
         }
         else
         {
             sizeofCollider = new Vector2(0.6f, 2.2f);
-            //offsetofCollider = new Vector2(0f, 1f);
+            offsetofCollider = new Vector2(0f, 1f);
         }
 
         boxCollider.size = sizeofCollider;
-        boxCollider.offset = boxCollider.offset;
+        boxCollider.offset = offsetofCollider;
         //This updates the character’s size and direction in the game.
         //If scale.x = -1f, the character flips left.
         //If scale.x = 1f, the character flips right.
@@ -81,8 +80,5 @@ public class PlayerController : MonoBehaviour
         float jump = Input.GetAxisRaw("Vertical");
         animator.SetFloat("Jump", jump);
 
-
-
-        
     }
 }
