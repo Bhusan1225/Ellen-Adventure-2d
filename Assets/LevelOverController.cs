@@ -10,7 +10,7 @@ public class LevelOverController : MonoBehaviour
         //insteas of this try to use getComponent and
         //check the unique component in that gameObject max.
         //time it will be the script.
-        if (collision.gameObject.GetComponent<PlayerController>()!=null)
+        if (collision.gameObject.GetComponent<PlayerController>()!= null)
         {
             //game Over logic
             Debug.Log("Level complete");
