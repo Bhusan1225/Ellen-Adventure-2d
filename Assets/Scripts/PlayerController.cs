@@ -1,12 +1,16 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 
 public class PlayerController : MonoBehaviour
 {
 
     public Animator animator;
+    public float speed;
 
     public BoxCollider2D boxCollider;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,20 +22,35 @@ public class PlayerController : MonoBehaviour
     {
         playercontroller();
         plaverCrouch();
-        playerJump();
+        playerJumpanimation();
 
 
     }
 
     private void playercontroller()
     {
-        float speed = Input.GetAxisRaw("Horizontal");
-        animator.SetFloat("Speed", Mathf.Abs(speed));
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        playerMovementAnimation(horizontal);
+        playerMovement(horizontal);
 
 
+    }
+    void playerMovement(float horizontal)
+    {
+
+        Vector3 position = transform.position;
+        position.x += horizontal * speed * Time.deltaTime;
+        
+        transform.position = position;
+        //gameObject.transform.position.x = position.x +horizontal*speed;
+    }
+
+    private void playerMovementAnimation(float horizontal)
+    {
+        animator.SetFloat("Speed", Mathf.Abs(horizontal));
 
         Vector3 scale = transform.localScale;
-        if (speed < 0)
+        if (horizontal < 0)
         {
 
             scale.x = -1f * Mathf.Abs(scale.x);
@@ -43,11 +62,9 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        transform.localScale = scale;
-        //This updates the character’s size and direction in the game.
-        //If scale.x = -1f, the character flips left.
-        //If scale.x = 1f, the character flips right.
+        transform.localScale = scale;//it kind of RHS =LHS
     }
+
     void plaverCrouch()
     {
         bool crouch = Input.GetKey(KeyCode.LeftControl);
@@ -75,7 +92,7 @@ public class PlayerController : MonoBehaviour
         //If scale.x = 1f, the character flips right.
     }
 
-    void playerJump()
+    void playerJumpanimation()
     {
         float jump = Input.GetAxisRaw("Vertical");
         animator.SetFloat("Jump", jump);
