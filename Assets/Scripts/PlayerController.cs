@@ -7,35 +7,44 @@ public class PlayerController : MonoBehaviour
 
     public Animator animator;
     public float speed;
+    public float jumpheight;
 
     public BoxCollider2D boxCollider;
+    private Rigidbody2D rb;
 
 
     // Start is called before the first frame update
     void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        playercontroller();
+        playercontroler();
         plaverCrouch();
-        playerJumpanimation();
+        
 
 
     }
 
-    private void playercontroller()
+    private void playercontroler()
     {
+        //input
         float horizontal = Input.GetAxisRaw("Horizontal");
-        playerMovementAnimation(horizontal);
-        playerMovement(horizontal);
+        float vertical = Input.GetAxisRaw("Jump");
 
+        playerMovementAnimation(horizontal, vertical);
+        playerMovement(horizontal,vertical);
+       
 
     }
-    void playerMovement(float horizontal)
+
+   
+
+    void playerMovement(float horizontal, float vertical)
     {
 
         Vector3 position = transform.position;
@@ -43,9 +52,15 @@ public class PlayerController : MonoBehaviour
         
         transform.position = position;
         //gameObject.transform.position.x = position.x +horizontal*speed;
+
+        if (vertical > 0)
+        {
+            rb.AddForce(new Vector2(0, jumpheight), ForceMode2D.Impulse);
+
+        }
     }
 
-    private void playerMovementAnimation(float horizontal)
+    private void playerMovementAnimation(float horizontal, float vertical)
     {
         animator.SetFloat("Speed", Mathf.Abs(horizontal));
 
@@ -63,6 +78,16 @@ public class PlayerController : MonoBehaviour
         }
 
         transform.localScale = scale;//it kind of RHS =LHS
+
+        //player jump animation
+        if (vertical > 0f)
+        {
+            animator.SetBool("Jump", true);
+        }
+        else
+        {
+            animator.SetBool("Jump", false);
+        }
     }
 
     void plaverCrouch()
@@ -92,10 +117,4 @@ public class PlayerController : MonoBehaviour
         //If scale.x = 1f, the character flips right.
     }
 
-    void playerJumpanimation()
-    {
-        float jump = Input.GetAxisRaw("Vertical");
-        animator.SetFloat("Jump", jump);
-
-    }
 }
