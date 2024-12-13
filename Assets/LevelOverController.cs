@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class LevelOverController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        //if (collision.gameObject.CompareTag("Player"))
+        //insteas of this try to use getComponent and
+        //check the unique component in that gameObject max.
+        //time it will be the script.
+        if (collision.gameObject.GetComponent<PlayerController>()!=null)
+        {
+            //game Over logic
+            Debug.Log("Level complete");
+
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+    
+
+
+
 }
