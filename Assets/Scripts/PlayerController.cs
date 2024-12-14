@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -11,6 +12,8 @@ public class PlayerController : MonoBehaviour
 
     public BoxCollider2D boxCollider;
     private Rigidbody2D rb;
+
+    public ScoreController scoreController;
 
 
     // Start is called before the first frame update
@@ -77,7 +80,7 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        transform.localScale = scale;//it kind of RHS =LHS
+        transform.localScale = scale;//it's kind of RHS =LHS
 
         //player jump animation
         if (vertical > 0f)
@@ -117,4 +120,11 @@ public class PlayerController : MonoBehaviour
         //If scale.x = 1f, the character flips right.
     }
 
+    internal void PickUptKey()
+    {
+        Debug.Log("Player got oen point.");
+        scoreController.IncreaseScore(15);
+    }
+
+    
 }
