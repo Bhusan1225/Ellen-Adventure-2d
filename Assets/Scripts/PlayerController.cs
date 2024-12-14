@@ -123,7 +123,7 @@ public class PlayerController : MonoBehaviour
     internal void PickUptKey()
     {
         Debug.Log("Player got oen point.");
-        scoreController.IncreaseScore(15);
+        scoreController.IncreaseScore(20);
     }
 
     
