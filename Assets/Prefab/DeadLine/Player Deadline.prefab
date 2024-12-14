@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7706071622522210963
+--- !u!1 &6292540444035478052
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6471118564935169469}
-  - component: {fileID: 1961641695058291012}
-  - component: {fileID: 2828494341212365215}
+  - component: {fileID: 2615071549367341845}
+  - component: {fileID: 4691854143207802921}
+  - component: {fileID: 7471282888195075624}
   m_Layer: 0
   m_Name: Player Deadline
   m_TagString: Untagged
@@ -18,28 +18,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6471118564935169469
+--- !u!4 &2615071549367341845
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7706071622522210963}
+  m_GameObject: {fileID: 6292540444035478052}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.557789, y: 2.864023, z: -0.10947969}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 33.7, y: -8.47, z: -0.10947969}
+  m_LocalScale: {x: -0.95623106, y: 1.4014, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1961641695058291012
+--- !u!61 &4691854143207802921
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7706071622522210963}
+  m_GameObject: {fileID: 6292540444035478052}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -76,21 +76,20 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 87.23, y: 1}
+  m_Size: {x: 148.79, y: 1}
   m_EdgeRadius: 0
---- !u!114 &2828494341212365215
+--- !u!114 &7471282888195075624
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7706071622522210963}
+  m_GameObject: {fileID: 6292540444035478052}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 456d57e2d848aeb4c94a229e7abf2680, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverPanel: {fileID: 0}
+  gameOverCanvas: {fileID: 0}
   restart_Button: {fileID: 0}
-  isActive: 0
   RestartSceneName: Scene 1

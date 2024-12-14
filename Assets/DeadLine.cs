@@ -21,21 +21,21 @@ public class DeadLine : MonoBehaviour
             //game Over logic
             Debug.Log("Plater dead,restart level");
             //enable canvas
-            gameOverCanvas.SetActive(isActive == true);
-            Debug.Log("crossed setAcitve");
-            restart_Button.onClick.AddListener(restartLevel);
+            //gameOverCanvas.SetActive(isActive == true);
+           // Debug.Log("crossed setAcitve");
+            //restart_Button.onClick.AddListener(restartLevel);
             Debug.Log("crossed addAddListener");
-
+            SceneManager.LoadScene(RestartSceneName);
 
         }
     }
 
-    
 
 
-    private void restartLevel()
-    {
-        SceneManager.LoadScene(RestartSceneName);
-    }
+
+    //private void restartLevel()
+    //{
+    //    SceneManager.LoadScene(RestartSceneName);
+    //}
 
 }
