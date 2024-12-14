@@ -6,8 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class KeyController : MonoBehaviour
 {
-   
 
+    public Animator animator;
+
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -15,8 +17,11 @@ public class KeyController : MonoBehaviour
         {
             PlayerController playerController = collision.gameObject.GetComponent<PlayerController>();
             playerController.PickUptKey();
-           
-            Destroy(gameObject);
+
+            
+            animator.SetBool("KeyCollected", true);
+
+            Destroy(gameObject,1);
 
 
 
