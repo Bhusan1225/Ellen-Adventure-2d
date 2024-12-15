@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public ScoreController scoreController;
 
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +32,11 @@ public class PlayerController : MonoBehaviour
         
 
 
+    }
+    
+    public void playerDeathAnimation()
+    {
+        animator.SetBool("p_Death", true);
     }
 
     private void playercontroler()
@@ -128,6 +134,10 @@ public class PlayerController : MonoBehaviour
 
     internal void killPlayer()
     {
-        throw new NotImplementedException();
+        Debug.Log("Player lost the game.");
+        playerDeathAnimation();
+        
+        //Destroy(gameObject);
+        
     }
 }

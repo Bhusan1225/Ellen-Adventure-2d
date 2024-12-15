@@ -105,10 +105,10 @@ GameObject:
   - component: {fileID: 46171900397492069}
   - component: {fileID: 9136387367398291880}
   - component: {fileID: 5732429180615207108}
-  - component: {fileID: 8897855813576496902}
+  - component: {fileID: 2889512753807796929}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -274,7 +274,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6, y: 2.2}
   m_EdgeRadius: 0
---- !u!114 &8897855813576496902
+--- !u!114 &2889512753807796929
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -287,6 +287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 46171900397492069}
-  speed: 4
+  speed: 2
   jumpheight: 1
   boxCollider: {fileID: 5732429180615207108}
+  scoreController: {fileID: 0}
