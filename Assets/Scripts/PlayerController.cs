@@ -122,9 +122,12 @@ public class PlayerController : MonoBehaviour
 
     internal void PickUptKey()
     {
-        Debug.Log("Player got oen point.");
+        Debug.Log("Player got one point.");
         scoreController.IncreaseScore(20);
     }
 
-    
+    internal void killPlayer()
+    {
+        throw new NotImplementedException();
+    }
 }
