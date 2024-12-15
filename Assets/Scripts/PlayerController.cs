@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 
 public class PlayerController : MonoBehaviour
@@ -136,8 +137,15 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("Player lost the game.");
         playerDeathAnimation();
+
+        ReloadLevel();
+
         
-        
-        
+    }
+
+    private void ReloadLevel()
+    {
+        Debug.Log("load scene 0. ");
+        SceneManager.LoadScene(0);
     }
 }

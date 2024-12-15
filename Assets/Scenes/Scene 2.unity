@@ -1883,37 +1883,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 142512669433795077, guid: 91af3754d97e76b4baf4ed661bc3a4f0, type: 3}
-      propertyPath: pointA.x
-      value: 21
-      objectReference: {fileID: 0}
-    - target: {fileID: 142512669433795077, guid: 91af3754d97e76b4baf4ed661bc3a4f0, type: 3}
-      propertyPath: pointA.y
-      value: 3.59
-      objectReference: {fileID: 0}
-    - target: {fileID: 142512669433795077, guid: 91af3754d97e76b4baf4ed661bc3a4f0, type: 3}
-      propertyPath: pointB.x
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 142512669433795077, guid: 91af3754d97e76b4baf4ed661bc3a4f0, type: 3}
-      propertyPath: pointB.y
-      value: 3.59
-      objectReference: {fileID: 0}
     - target: {fileID: 537444577503305491, guid: 91af3754d97e76b4baf4ed661bc3a4f0, type: 3}
       propertyPath: m_Name
       value: Enmey_Gunner
-      objectReference: {fileID: 0}
-    - target: {fileID: 6536460116730229576, guid: 91af3754d97e76b4baf4ed661bc3a4f0, type: 3}
-      propertyPath: m_Size.x
-      value: 3.2524242
-      objectReference: {fileID: 0}
-    - target: {fileID: 6536460116730229576, guid: 91af3754d97e76b4baf4ed661bc3a4f0, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.57425785
-      objectReference: {fileID: 0}
-    - target: {fileID: 6536460116730229576, guid: 91af3754d97e76b4baf4ed661bc3a4f0, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8914822380249596572, guid: 91af3754d97e76b4baf4ed661bc3a4f0, type: 3}
       propertyPath: m_LocalPosition.x

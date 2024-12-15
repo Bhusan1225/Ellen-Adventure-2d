@@ -10,7 +10,7 @@ public class enmeyController : MonoBehaviour
     public Vector3 pointA;
     public Vector3 pointB;
     private Vector3 targetPoint;
-    private Animator e_animator;
+    public Animator animator;
 
     private void Start()
     {
@@ -38,14 +38,13 @@ public class enmeyController : MonoBehaviour
         if (transform.position == targetPoint)
         {
             targetPoint = (targetPoint == pointA) ? pointB : pointA;
-            e_animator.SetBool("Attack", true);
-
-            playerRotation();
+            
+            enmeyRotation();
             
         } 
     }
 
-    void playerRotation()
+    void enmeyRotation()
     {
         Vector3 scale = transform.localScale;
         if (targetPoint == pointB)
