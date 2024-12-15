@@ -21,8 +21,8 @@ public class KeyController : MonoBehaviour
             
             animator.SetBool("KeyCollected", true);
 
-            Destroy(gameObject,1);
-
+            Destroy(gameObject, 1);
+ 
 
 
         }
