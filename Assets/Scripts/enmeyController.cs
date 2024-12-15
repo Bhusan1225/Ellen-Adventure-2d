@@ -49,7 +49,7 @@ public class enmeyController : MonoBehaviour
         if (targetPoint == pointB)
         {
             
-            scale.x =  Mathf.Abs(scale.x);
+            scale.x = Mathf.Abs(scale.x);
 
         }
         else
