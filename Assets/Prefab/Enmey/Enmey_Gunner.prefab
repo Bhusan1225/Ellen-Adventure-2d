@@ -99,6 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77a0fe8dc6578ac4db632f589adfa3b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  patrolSpeed: 2
+  pointA: {x: 0, y: 0, z: 0}
+  pointB: {x: 0, y: 0, z: 0}
 --- !u!61 &6536460116730229576
 BoxCollider2D:
   m_ObjectHideFlags: 0

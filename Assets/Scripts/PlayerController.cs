@@ -137,7 +137,7 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Player lost the game.");
         playerDeathAnimation();
         
-        //Destroy(gameObject);
+        
         
     }
 }
