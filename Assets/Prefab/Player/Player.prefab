@@ -289,5 +289,7 @@ MonoBehaviour:
   animator: {fileID: 46171900397492069}
   speed: 2
   jumpheight: 1
+  health: 3
+  health_text: {fileID: 0}
   boxCollider: {fileID: 5732429180615207108}
   scoreController: {fileID: 0}

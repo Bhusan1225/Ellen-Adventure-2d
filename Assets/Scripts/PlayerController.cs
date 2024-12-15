@@ -2,6 +2,8 @@ using System;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
+using TMPro;
+using UnityEngine.SocialPlatforms.Impl;
 
 
 public class PlayerController : MonoBehaviour
@@ -10,6 +12,9 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     public float speed;
     public float jumpheight;
+    
+    public int health = 3;
+    public TextMeshProUGUI health_text;
 
     public BoxCollider2D boxCollider;
     private Rigidbody2D rb;
@@ -133,14 +138,22 @@ public class PlayerController : MonoBehaviour
         scoreController.IncreaseScore(20);
     }
 
-    internal void killPlayer()
+    internal void DamagePlayer()
     {
-        Debug.Log("Player lost the game.");
-        playerDeathAnimation();
+        Debug.Log("Player got deamage.");
+        Debug.Log("health reduced.");
+        if (health > 0 && health <= 3)
+        {
+            health = health - 1;
+            health_text.text = "health:" + health;
 
-        ReloadLevel();
+        }
+        else
+        {
+            playerDeathAnimation();
+            ReloadLevel();
+        }
 
-        
     }
 
     private void ReloadLevel()

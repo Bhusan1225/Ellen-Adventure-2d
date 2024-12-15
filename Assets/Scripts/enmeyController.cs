@@ -23,7 +23,6 @@ public class enmeyController : MonoBehaviour
     {
 
         PatrolEnmey();
-        //e_animator = GetComponent<Animator>();
     }
     private void SetPatrolPoints()
     {
@@ -37,9 +36,9 @@ public class enmeyController : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, targetPoint, patrolSpeed * Time.deltaTime);
         if (transform.position == targetPoint)
         {
-            targetPoint = (targetPoint == pointA) ? pointB : pointA;
+            targetPoint = (targetPoint == pointA) ? pointB : pointA; //this will take care of the enemy patrolling 
             
-            enmeyRotation();
+            enmeyRotation();// this will take care of when the enmey reaches to the point B the he changes the face
             
         } 
     }
@@ -68,7 +67,7 @@ public class enmeyController : MonoBehaviour
         {
 
             PlayerController playerController = collision.gameObject.GetComponent<PlayerController>();
-            playerController.killPlayer();
+            playerController.DamagePlayer();
 
 
 
