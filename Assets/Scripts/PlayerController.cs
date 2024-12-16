@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.UI;
 using UnityEngine.SocialPlatforms.Impl;
 
 
@@ -19,7 +20,9 @@ public class PlayerController : MonoBehaviour
     public BoxCollider2D boxCollider;
     private Rigidbody2D rb;
 
+
     public ScoreController scoreController;
+    public GameOverController gameOverController;
 
 
 
@@ -28,6 +31,7 @@ public class PlayerController : MonoBehaviour
     {
         boxCollider = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
+        
     }
 
     // Update is called once per frame
@@ -140,7 +144,7 @@ public class PlayerController : MonoBehaviour
 
     internal void DamagePlayer()
     {
-        Debug.Log("Player got deamage.");
+        Debug.Log("Player got damage.");
         Debug.Log("health reduced.");
         if (health > 0 && health <= 3)
         {
@@ -151,14 +155,15 @@ public class PlayerController : MonoBehaviour
         else
         {
             playerDeathAnimation();
-            ReloadLevel();
+            gameOverController.playerDied();
+
+            Debug.Log("done with the playerDied();");
+            Debug.Log("you can't able to play button.");
+            
+
         }
 
     }
+    
 
-    private void ReloadLevel()
-    {
-        Debug.Log("load scene 0. ");
-        SceneManager.LoadScene(0);
-    }
 }
