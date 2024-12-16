@@ -157,8 +157,7 @@ public class PlayerController : MonoBehaviour
             playerDeathAnimation();
             gameOverController.playerDied();
 
-            Debug.Log("done with the playerDied();");
-            Debug.Log("you can't able to play button.");
+            this.enabled = false;
             
 
         }

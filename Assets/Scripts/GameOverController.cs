@@ -27,5 +27,5 @@ public class GameOverController : MonoBehaviour
         Debug.Log("load scene 0.");
         SceneManager.LoadScene(sceneName);
     }
-    
+    //done with the restart Button
 } 
