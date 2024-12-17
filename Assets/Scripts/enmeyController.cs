@@ -69,11 +69,7 @@ public class enmeyController : MonoBehaviour
             PlayerController playerController = collision.gameObject.GetComponent<PlayerController>();
             playerController.DamagePlayer();
 
-
-
             //e_animator.SetBool("Attack", true);
-
-
 
         }
     }

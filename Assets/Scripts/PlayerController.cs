@@ -39,8 +39,9 @@ public class PlayerController : MonoBehaviour
     {
         playercontroler();
         plaverCrouch();
-        
 
+
+        
 
     }
     
@@ -70,7 +71,7 @@ public class PlayerController : MonoBehaviour
         position.x += horizontal * speed * Time.deltaTime;
         
         transform.position = position;
-        //gameObject.transform.position.x = position.x +horizontal*speed;
+       
 
         if (vertical > 0)
         {
