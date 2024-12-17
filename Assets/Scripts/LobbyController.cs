@@ -13,6 +13,8 @@ public class LobbyController : MonoBehaviour
    
     public GameObject playCanvas;
     public GameObject QuitPanel;
+
+    public GameObject ChooseLevelpopup;
     private void Awake()
     {
         Playbutton.onClick.AddListener(PlayGame);
@@ -28,6 +30,7 @@ public class LobbyController : MonoBehaviour
 
     private void PlayGame()
     {
-        SceneManager.LoadScene(1);
+        ChooseLevelpopup.SetActive(true);
+        //SceneManager.LoadScene(1);
     }
 }
