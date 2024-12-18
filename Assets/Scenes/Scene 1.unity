@@ -1726,6 +1726,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: Scene 2
+  levelText: {fileID: 2028926220}
 --- !u!61 &1358621581
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2535,11 +2536,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1819151081496246995, guid: 8ba880dcd26fb3e4d8ecad138f1de058, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 46.8
       objectReference: {fileID: 0}
     - target: {fileID: 1819151081496246995, guid: 8ba880dcd26fb3e4d8ecad138f1de058, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.13
+      value: 11.8
       objectReference: {fileID: 0}
     - target: {fileID: 1819151081496246995, guid: 8ba880dcd26fb3e4d8ecad138f1de058, type: 3}
       propertyPath: m_LocalPosition.z
