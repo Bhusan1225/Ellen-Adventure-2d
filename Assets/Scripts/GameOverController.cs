@@ -12,20 +12,19 @@ public class GameOverController : MonoBehaviour
     public Button QuitButton;
 
     public GameObject GameOverPanel;
-    public GameObject quitPanel;
     
-    public string sceneName;
+    
+    
 
     public void Awake()
     {
         RestartButton.onClick.AddListener(ReloadLevel);
-        QuitButton.onClick.AddListener(Thanksplaying);
+        QuitButton.onClick.AddListener(MainMenu);
     }
 
-    private void Thanksplaying()
+    private void MainMenu()
     {
-        //GameOverPanel.SetActive(false);
-        //quitPanel.SetActive(true);
+        
         SceneManager.LoadScene(0);
     }
 
@@ -37,8 +36,8 @@ public class GameOverController : MonoBehaviour
 
     public void ReloadLevel()
     {
-        Debug.Log("load scene 0.");
-        SceneManager.LoadScene(sceneName);
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex);
     }
     //done with the restart Button
 } 
