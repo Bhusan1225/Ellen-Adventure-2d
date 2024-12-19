@@ -2657,7 +2657,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6344379254551835404, guid: 21d0b77181fbb1142a7b669393fae795, type: 3}
       propertyPath: sceneName
-      value: Scene 1
+      value: Scene 4
       objectReference: {fileID: 0}
     - target: {fileID: 6344379254551835404, guid: 21d0b77181fbb1142a7b669393fae795, type: 3}
       propertyPath: QuitButton
@@ -2952,6 +2952,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2028926220}
     - target: {fileID: 39377086935279357, guid: 120526c45429d5549a3c2c03898f8c69, type: 3}
+      propertyPath: NextSceneName
+      value: Lobby
+      objectReference: {fileID: 0}
+    - target: {fileID: 39377086935279357, guid: 120526c45429d5549a3c2c03898f8c69, type: 3}
       propertyPath: restartButton
       value: 
       objectReference: {fileID: 1212092915}
@@ -3124,6 +3128,10 @@ PrefabInstance:
     - target: {fileID: 6292540444035478052, guid: 079c3a671158fe242a2e140089941257, type: 3}
       propertyPath: m_Name
       value: Player Deadline
+      objectReference: {fileID: 0}
+    - target: {fileID: 7471282888195075624, guid: 079c3a671158fe242a2e140089941257, type: 3}
+      propertyPath: RestartSceneName
+      value: Scene 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
