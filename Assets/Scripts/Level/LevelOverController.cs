@@ -33,6 +33,7 @@ public class LevelOverController : MonoBehaviour
 
     private void RestartCurrentLevel()
     {
+        SoundManager.Instance.Play(Sounds.ButtonClick);
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
     }
@@ -43,8 +44,8 @@ public class LevelOverController : MonoBehaviour
        
             //game Over logic
             Debug.Log("Level complete");
-        
-            LevelManager.Instance.MarkcurrentLevelComplete();
+
+        LevelManager.Instance.MarkcurrentLevelComplete();
            LevelOverPanel.SetActive(true);
           
 
