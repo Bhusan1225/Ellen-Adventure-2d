@@ -90,4 +90,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 456d57e2d848aeb4c94a229e7abf2680, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RestartSceneName: Scene 1
+  RestartSceneName: Scene 3
