@@ -7,6 +7,7 @@ using System;
 
 public class LevelManager : MonoBehaviour
 {
+    //singleton
     private static LevelManager instance;
     public static LevelManager Instance { get { return instance; } }
 
