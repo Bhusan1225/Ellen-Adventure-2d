@@ -7,7 +7,7 @@ using System;
 public class DeadLine : MonoBehaviour
 {
 
-     public string RestartSceneName;
+    [SerializeField] private string restartSceneName;
 
     private void OnTriggerEnter2D(Collider2D collision )
     {
@@ -15,7 +15,7 @@ public class DeadLine : MonoBehaviour
         {
             //game Over logic
             Debug.Log("Player is dead,restart the level");
-            SceneManager.LoadScene(RestartSceneName);
+            SceneManager.LoadScene(restartSceneName);
 
         }
     }

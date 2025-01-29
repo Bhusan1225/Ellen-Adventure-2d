@@ -10,10 +10,10 @@ public class SoundManager : MonoBehaviour
     private static SoundManager instance;
     public static SoundManager Instance { get { return instance; } }
 
-    public SoundType[] Sounds;
+    [SerializeField] private SoundType[] Sounds;
 
-    public AudioSource soundEffect;
-    public AudioSource soundMusic;
+    [SerializeField] private AudioSource SoundEffect;
+    [SerializeField] private AudioSource SoundMusic;
 
     private void Awake()
     {
@@ -40,8 +40,8 @@ public class SoundManager : MonoBehaviour
 
         if (clip != null)
         {
-            soundMusic.clip = clip; 
-            soundMusic.Play();
+            SoundMusic.clip = clip; 
+            SoundMusic.Play();
         }
         else
         {
@@ -54,7 +54,7 @@ public class SoundManager : MonoBehaviour
 
         if (clip != null )
         {
-            soundEffect.PlayOneShot(clip);
+            SoundEffect.PlayOneShot(clip);
         }
         else
         {

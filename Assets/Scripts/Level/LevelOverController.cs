@@ -8,29 +8,25 @@ using System;
 
 public class LevelOverController : MonoBehaviour
 {
-    public GameObject LevelOverPanel;
-    public Button restartButton;
-    public Button nextLevelButton;
-    public string NextSceneName;
+    [SerializeField] private GameObject levelOverPanel;
+    [SerializeField] private Button restartButton;
+    [SerializeField] private Button nextLevelButton;
+    [SerializeField] private string nextSceneName;
 
-
-   
 
     private void Start()
     {
-        restartButton.onClick.AddListener(RestartCurrentLevel);
-        nextLevelButton.onClick.AddListener(LoadNextLevel);
+        restartButton.onClick.AddListener(restartCurrentLevel);
+        nextLevelButton.onClick.AddListener(loadNextLevel);
     }
 
-    private void LoadNextLevel()
+    private void loadNextLevel()
     {
 
-        //SceneManager.LoadScene(NextSceneName);
-        
-        SceneManager.LoadScene(NextSceneName);
+        SceneManager.LoadScene(nextSceneName);
     }
 
-    private void RestartCurrentLevel()
+    private void restartCurrentLevel()
     {
         SoundManager.Instance.Play(Sounds.ButtonClick);
 
@@ -41,14 +37,12 @@ public class LevelOverController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.GetComponent<PlayerController>() != null)
-
+        {
             //game Over logic
             Debug.Log("Level complete");
 
-        LevelManager.Instance.MarkcurrentLevelComplete();
-        LevelOverPanel.SetActive(true);
-
-
-
+            LevelManager.Instance.MarkCurrentLevelComplete();
+            levelOverPanel.SetActive(true);
+        }
     }
 }

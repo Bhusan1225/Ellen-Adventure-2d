@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class enmeyController : MonoBehaviour
+public class EnemyController : MonoBehaviour
 {
 
     public float patrolSpeed = 2f;
@@ -14,7 +14,7 @@ public class enmeyController : MonoBehaviour
 
     private void Start()
     {
-        SetPatrolPoints();
+        setPatrolPoints();
         
     }
 
@@ -22,28 +22,28 @@ public class enmeyController : MonoBehaviour
     private void Update()
     {
 
-        PatrolEnmey();
+        enemyPatrolling();
     }
-    private void SetPatrolPoints()
+    private void setPatrolPoints()
     {
         transform.position = pointA;
         targetPoint = pointB;
                
     }
 
-    private void PatrolEnmey()
+    private void enemyPatrolling()
     {
         transform.position = Vector3.MoveTowards(transform.position, targetPoint, patrolSpeed * Time.deltaTime);
         if (transform.position == targetPoint)
         {
             targetPoint = (targetPoint == pointA) ? pointB : pointA; //this will take care of the enemy patrolling 
             
-            enmeyRotation();// this will take care of when the enmey reaches to the point B the he changes the face
+            enemyRotation();// this will take care of when the enmey reaches to the point B the he changes the face
             
         } 
     }
 
-    void enmeyRotation()
+    void enemyRotation()
     {
         Vector3 scale = transform.localScale;
         if (targetPoint == pointB)
@@ -67,7 +67,7 @@ public class enmeyController : MonoBehaviour
         {
 
             PlayerController playerController = collision.gameObject.GetComponent<PlayerController>();
-            playerController.DamagePlayer();
+            playerController.damagePlayer();
 
             //e_animator.SetBool("Attack", true);
 

@@ -11,7 +11,7 @@ public class LevelManager : MonoBehaviour
     private static LevelManager instance;
     public static LevelManager Instance { get { return instance; } }
 
-    public string[] Levels;
+    [SerializeField] private string[] Levels;
 
     private void Awake()
     {
@@ -36,16 +36,12 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    public void MarkcurrentLevelComplete()
+    public void MarkCurrentLevelComplete()
     {
         Scene currentScene = SceneManager.GetActiveScene();
         //set level status to complete 
         
         SetLevelStatus(currentScene.name, LevelStatus.Completed);
-
-        //int nextSceneIndex = currentScene.buildIndex + 1;
-        //Scene nextScene = SceneManager.GetSceneByBuildIndex(nextSceneIndex);
-        //SetLevelStatus(nextScene.name, LevelStatus.Unlocked);
 
         int currentSceneIndex = Array.FindIndex(Levels, level => level == currentScene.name);
         int nextSceneIndex = currentSceneIndex + 1;

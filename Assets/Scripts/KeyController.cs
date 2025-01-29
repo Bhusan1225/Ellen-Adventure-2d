@@ -16,7 +16,7 @@ public class KeyController : MonoBehaviour
         if (collision.gameObject.GetComponent<PlayerController>() != null)
         {
             PlayerController playerController = collision.gameObject.GetComponent<PlayerController>();
-            playerController.PickUptKey();
+            playerController.pickUpKey();
 
             
             animator.SetBool("KeyCollected", true);

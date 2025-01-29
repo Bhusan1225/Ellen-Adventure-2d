@@ -8,38 +8,35 @@ using UnityEngine.UI;
 public class GameOverController : MonoBehaviour
 {
 
-    public Button RestartButton;
-    public Button QuitButton;
+    [SerializeField] private Button RestartButton;
+    [SerializeField] private Button QuitButton;
 
-    public GameObject GameOverPanel;
-    
-    
-    
-
+    [SerializeField] private GameObject GameOverPanel;
+  
     public void Awake()
     {
-        RestartButton.onClick.AddListener(ReloadLevel);
-        QuitButton.onClick.AddListener(MainMenu);
+        RestartButton.onClick.AddListener(reloadLevel);
+        QuitButton.onClick.AddListener(showMainMenu);
     }
 
-    private void MainMenu()
+    private void showMainMenu()
     {
-        
+ 
         SceneManager.LoadScene(0);
     }
 
-    public void playerDied()
+    public void onPlayerDeath()
     {
         SoundManager.Instance.Play(Sounds.PlayerDeath);
         gameObject.SetActive(true);
     }
 
 
-    public void ReloadLevel()
+    public void reloadLevel()
     {
         SoundManager.Instance.Play(Sounds.ButtonClick);
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
     }
-    //done with the restart Button
+    
 } 

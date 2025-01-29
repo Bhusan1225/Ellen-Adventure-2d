@@ -7,7 +7,7 @@ using System;
 public class LevelLoader : MonoBehaviour
 {
     private Button button;
-    public string LevelName;
+    [SerializeField]private string levelName;
 
     private void Awake()
     {
@@ -17,7 +17,7 @@ public class LevelLoader : MonoBehaviour
 
     private void onClick()
     {
-        LevelStatus levelStatus = LevelManager.Instance.GetLevelStatus(LevelName);
+        LevelStatus levelStatus = LevelManager.Instance.GetLevelStatus(levelName);
 
         switch (levelStatus)
         {
@@ -28,12 +28,12 @@ public class LevelLoader : MonoBehaviour
 
             case LevelStatus.Unlocked:
                 SoundManager.Instance.Play(Sounds.ButtonClick);
-                SceneManager.LoadScene (LevelName);
+                SceneManager.LoadScene (levelName);
                 break;
 
             case LevelStatus.Completed:
                 SoundManager.Instance.Play(Sounds.ButtonClick);
-                SceneManager.LoadScene(LevelName);
+                SceneManager.LoadScene(levelName);
                 break;
 
         }

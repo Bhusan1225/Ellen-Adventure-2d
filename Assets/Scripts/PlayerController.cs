@@ -10,39 +10,32 @@ using UnityEngine.SocialPlatforms.Impl;
 public class PlayerController : MonoBehaviour
 {
 
-    public Animator animator;
-    public float speed;
-    public float jumpheight;
-    
-    public int health = 3;
-    public TextMeshProUGUI health_text;
+    [SerializeField] private Animator animator;
+    [SerializeField] private float speed;
+    [SerializeField] private float jumpHeight;
 
-    public BoxCollider2D boxCollider;
-    private Rigidbody2D rb;
+    [SerializeField] private int health = 3;
+    [SerializeField] private TextMeshProUGUI healthText;
 
+    [SerializeField] private BoxCollider2D boxCollider;
+    private Rigidbody2D rigidBody;
 
-    public ScoreController scoreController;
-    public GameOverController gameOverController;
-
-
+    [SerializeField] private ScoreController scoreController;
+    [SerializeField] private GameOverController gameOverController;
 
     // Start is called before the first frame update
     void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();
-        rb = GetComponent<Rigidbody2D>();
+        rigidBody = GetComponent<Rigidbody2D>();
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        playercontroler();
-        plaverCrouch();
-
-
-        
-
+        playerInput();
+   
     }
     
     public void playerDeathAnimation()
@@ -50,7 +43,7 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("p_Death", true);
     }
 
-    private void playercontroler()
+    private void playerInput()
     {
         //input
         float horizontal = Input.GetAxisRaw("Horizontal");
@@ -58,11 +51,8 @@ public class PlayerController : MonoBehaviour
 
         playerMovementAnimation(horizontal, vertical);
         playerMovement(horizontal,vertical);
-       
-
-    }
-
    
+    }
 
     void playerMovement(float horizontal, float vertical)
     {
@@ -75,7 +65,7 @@ public class PlayerController : MonoBehaviour
 
         if (vertical > 0)
         {
-            rb.AddForce(new Vector2(0, jumpheight), ForceMode2D.Impulse);
+            rigidBody.AddForce(new Vector2(0, jumpHeight), ForceMode2D.Impulse);
 
         }
     }
@@ -110,60 +100,33 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void plaverCrouch()
-    {
-        bool crouch = Input.GetKey(KeyCode.LeftControl);
-        animator.SetBool("Crouch", crouch);
-
-        Vector2 sizeofCollider = boxCollider.size;
-        Vector2 offsetofCollider = boxCollider.offset;
-
-        if (crouch == true)
-        {
-
-            sizeofCollider = new Vector2(1.2f, 1.4f);
-            offsetofCollider = new Vector2(0f, 0.5f);
-        }
-        else
-        {
-            sizeofCollider = new Vector2(0.6f, 2.2f);
-            offsetofCollider = new Vector2(0f, 1f);
-        }
-
-        boxCollider.size = sizeofCollider;
-        boxCollider.offset = offsetofCollider;
-        //This updates the character’s size and direction in the game.
-        //If scale.x = -1f, the character flips left.
-        //If scale.x = 1f, the character flips right.
-    }
-
-    internal void PickUptKey()
+    
+    internal void pickUpKey()
     {
         Debug.Log("Player got one point.");
         scoreController.IncreaseScore(20);
     }
 
-    internal void DamagePlayer()
+    internal void damagePlayer()
     {
         Debug.Log("Player got damage.");
         Debug.Log("health reduced.");
         if (health > 0 && health <= 3)
         {
             health = health - 1;
-            health_text.text = "health:" + health;
+            healthText.text = "health:" + health;
 
         }
         else
         {
             playerDeathAnimation();
-            gameOverController.playerDied();
+            gameOverController.onPlayerDeath();
 
             this.enabled = false;
-            
+ 
 
         }
 
     }
-    
 
 }
