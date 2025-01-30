@@ -5,23 +5,20 @@ using UnityEngine.UIElements;
 
 public class EnemyController : MonoBehaviour
 {
-
-    public float patrolSpeed = 2f;
-    public Vector3 pointA;
-    public Vector3 pointB;
+    [SerializeField] private float patrolSpeed = 2f;
+    [SerializeField] private Vector3 pointA;
+    [SerializeField] private Vector3 pointB;
     private Vector3 targetPoint;
-    public Animator animator;
+    [SerializeField] private Animator animator;
 
     private void Start()
     {
         setPatrolPoints();
-        
     }
 
 
     private void Update()
     {
-
         enemyPatrolling();
     }
     private void setPatrolPoints()
@@ -69,15 +66,8 @@ public class EnemyController : MonoBehaviour
             PlayerController playerController = collision.gameObject.GetComponent<PlayerController>();
             playerController.damagePlayer();
 
-            //e_animator.SetBool("Attack", true);
-
         }
     }
-
-
-   
-         
-
 
     
 }

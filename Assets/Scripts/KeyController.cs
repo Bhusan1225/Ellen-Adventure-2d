@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class KeyController : MonoBehaviour
 {
 
-    public Animator animator;
+    [SerializeField] private Animator animator;
 
     
 
